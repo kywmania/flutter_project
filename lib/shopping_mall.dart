@@ -11,8 +11,10 @@ class ShoppingMall {
     Product('socks', 5000),
   ];
   List<String> buyCart = []; //장바구니 리스트 초기화
+  List<String> removedCart = []; //삭제된 장바구니 목록 초기화
 
   int totalPrice = 0; //장바구니에 담긴 상품 총 가격 저장해 놓는 변수
+  int removedTotalPrice = 0; //삭제된 장바구니 총 가격 초기화
 
   void showProducts() {
     //상품 목록과 가격 출력
@@ -70,4 +72,6 @@ class ShoppingMall {
       print('장바구니에 $buyCart(이)가 담겨있네요. 총 $totalPrice원 입니다 !');
     }
   }
+
+  void resetCart() {}
 }
