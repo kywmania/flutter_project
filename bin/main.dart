@@ -39,6 +39,7 @@ void main() {
         print('삭제한 장바구니를 불러옵니다 !'); //삭제했던 장바구니 목록을 불러옴옴
         mall.totalPrice = mall.removedTotalPrice;
         mall.buyCart = mall.removedCart;
+
         break;
       case 6: //장바구니 상품목록, 가격 초기화
         if (mall.totalPrice == 0) {
@@ -46,8 +47,9 @@ void main() {
         } else {
           print('장바구니를 초기화합니다 !'); //장바구니를 초기화 하면서 초기화 된 값을 다른 리스트에 저장
           mall.removedTotalPrice = mall.totalPrice;
+          mall.removedCart = List.from(mall.buyCart);
+
           mall.totalPrice = 0;
-          mall.removedCart.addAll(mall.buyCart);
           mall.buyCart.clear();
         }
         break;

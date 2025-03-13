@@ -72,6 +72,4 @@ class ShoppingMall {
       print('장바구니에 $buyCart(이)가 담겨있네요. 총 $totalPrice원 입니다 !');
     }
   }
-
-  void resetCart() {}
 }
