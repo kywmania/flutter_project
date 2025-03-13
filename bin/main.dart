@@ -1,12 +1,6 @@
 import 'dart:io';
 import 'package:my_project/shopping_mall.dart';
 
-int? menu() {
-  stdout.write('원하시는 메뉴를 선택해주세요 !');
-  String menuStr = stdin.readLineSync() ?? '0';
-  return int.tryParse(menuStr);
-}
-
 void main() {
   ShoppingMall mall = ShoppingMall();
 
@@ -16,7 +10,7 @@ void main() {
       '[1] 상품 목록 보기 / [2] 장바구니에 담기 / [3] 장바구니에 담긴 상품의 총 가격 보기 / [4] 프로그램 종료 / [5] 삭제한 장바구니 불러오기기 / [6] 장바구니 초기화',
     );
 
-    switch (menu()) {
+    switch (mall.menu()) {
       //메뉴 선택
       case 1:
         mall.showProducts();
@@ -28,30 +22,13 @@ void main() {
         mall.showTotal();
         break;
       case 4: //종료할 건지 한 번 더 확인
-        print('정말 종료하시겠습니까 ? \n 5를 입력하면 종료됩니다 !');
-        if (menu() == 5) {
-          exit(0);
-        } else {
-          print('종료하지 않습니다.');
-        }
+        mall.confirmExit();
         break;
       case 5:
-        print('삭제한 장바구니를 불러옵니다 !'); //삭제했던 장바구니 목록을 불러옴옴
-        mall.totalPrice = mall.removedTotalPrice;
-        mall.buyCart = mall.removedCart;
-
+        mall.restoreRemovedCart();
         break;
       case 6: //장바구니 상품목록, 가격 초기화
-        if (mall.totalPrice == 0) {
-          print('이미 장바구니가 비어있습니다 !');
-        } else {
-          print('장바구니를 초기화합니다 !'); //장바구니를 초기화 하면서 초기화 된 값을 다른 리스트에 저장
-          mall.removedTotalPrice = mall.totalPrice;
-          mall.removedCart = List.from(mall.buyCart);
-
-          mall.totalPrice = 0;
-          mall.buyCart.clear();
-        }
+        mall.clearCart();
         break;
       default: //잘못된 메뉴 선택 시 출력
         print('지원하지 않는 기능입니다 ! 다시 시도해 주세요 ..');
