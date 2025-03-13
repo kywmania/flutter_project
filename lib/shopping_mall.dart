@@ -73,5 +73,37 @@ class ShoppingMall {
     }
   }
 
-  void resetCart() {}
+  void clearCart() {
+    if (totalPrice == 0) {
+      print('이미 장바구니가 비어있습니다 !');
+      return;
+    }
+    print('장바구니를 초기화합니다 !'); //장바구니를 초기화 하면서 초기화 된 값을 다른 리스트에 저장
+    removedTotalPrice = totalPrice;
+    removedCart = List.from(buyCart);
+
+    totalPrice = 0;
+    buyCart.clear();
+  }
+
+  int? menu() {
+    stdout.write('원하시는 메뉴를 선택해주세요 !');
+    String menuStr = stdin.readLineSync() ?? '0';
+    return int.tryParse(menuStr);
+  }
+
+  void confirmExit() {
+    print('정말 종료하시겠습니까 ? \n 5를 입력하면 종료됩니다 !');
+    if (menu() == 5) {
+      exit(0);
+    } else {
+      print('종료하지 않습니다.');
+    }
+  }
+
+  void restoreRemovedCart() {
+    print('삭제한 장바구니를 불러옵니다 !'); //삭제했던 장바구니 목록을 불러옴
+    totalPrice = removedTotalPrice;
+    buyCart = removedCart;
+  }
 }
