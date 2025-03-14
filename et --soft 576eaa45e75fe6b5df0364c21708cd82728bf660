@@ -1,0 +1,29 @@
+[33mcommit ef76e43c8310f5d418f99bf9d8b4d3c0f89e4b4f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: KKK <kywmania0908@gmail.com>
+Date:   Thu Mar 13 19:36:17 2025 +0900
+
+    객체지향 방식으로 함수 분리
+
+[33mcommit 576eaa45e75fe6b5df0364c21708cd82728bf660[m
+Author: KKK <kywmania0908@gmail.com>
+Date:   Thu Mar 13 17:59:25 2025 +0900
+
+    초기화 한 장바구니 불러오는 기능 추가
+
+[33mcommit e7f5d14aa909e0fb698ceab5c804362f510a4ae1[m
+Author: KKK <kywmania0908@gmail.com>
+Date:   Thu Mar 13 17:22:55 2025 +0900
+
+    삭제한 장바구니 불러오는 기능 추가
+
+[33mcommit 2c551482235042b941a079bb60dd20394fcd7186[m
+Author: KKK <kywmania0908@gmail.com>
+Date:   Thu Mar 13 17:02:04 2025 +0900
+
+    [Dart 개인과제] - 콘솔 쇼핑몰
+
+[33mcommit 9b747079df0b80a2de4d0a12dd50fa6e51c3657e[m
+Author: KKK <kywmania0908@gmail.com>
+Date:   Thu Mar 13 16:52:39 2025 +0900
+
+    [Dart 개인과제] - 콘솔 쇼핑몰
