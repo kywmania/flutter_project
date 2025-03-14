@@ -1,9 +1,6 @@
 import 'dart:io';
-<<<<<<< HEAD
-import '../lib/shopping_mall.dart';
-=======
 import 'package:my_project/shopping_mall.dart';
->>>>>>> ef76e43c8310f5d418f99bf9d8b4d3c0f89e4b4f
+
 
 void main() {
   ShoppingMall mall = ShoppingMall();
